@@ -9,7 +9,9 @@
 * After reaching the number 2048, the player can continue the game to get more points.
 * The game ends when there are no empty spaces on the board
 * and there are no blocks that could connect into one in the next move.
-* You can end the round at any time by clicking the ESC key
+* You can end the game at any time by clicking the ESC key
 * or the cross in the right top corner of the game window.
+* There is a possibility to return to the previous placement of 
+* numbers by clicking z key.
 
 

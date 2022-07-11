@@ -47,6 +47,11 @@ class Board:
             y = random.randint(0, 3)
         self.board[y][x].setval(random.randint(1, 2) * 2)
 
+    def prevsituation(self):
+        for x in range(0, 4):
+            for y in range(0, 4):
+                self.board[y][x].setval(self.prevboard[y][x].getval())
+
     def right(self):
         self.copytable()
         for z in range(0, 3):
@@ -127,6 +132,7 @@ class Board:
 
 
 class Game:
+
     def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode([600, 600])
@@ -183,6 +189,8 @@ class Game:
                     elif event.key == pygame.K_RIGHT:
                         if board.right():
                             board.randomizeelement()
+                    elif event.key == pygame.K_z:
+                        board.prevsituation()
                     elif event.key == pygame.K_ESCAPE:
                         pygame.quit()
                         sys.exit()
